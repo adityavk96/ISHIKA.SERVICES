@@ -18,7 +18,7 @@ function Header({ setIsOpen }) {
         {/* Right: Login button */}
         <Link
           to="/login"
-          className="hidden md:inline-block px-4 py-0.5 text-left px-4 py-3 bg-gray-200 hover:bg-gray-300 rounded-lg font-semibold transition-colors duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="hidden md:inline-block px-4 py-1 text-left px-4 py-1 bg-gray-200 hover:bg-gray-300 rounded-lg font-semibold transition-colors duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           Login
         </Link>
