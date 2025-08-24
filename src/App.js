@@ -1,27 +1,43 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom'; // No BrowserRouter import here
-
+import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
 import Header from './my components/header';
-import Main from './my components/main';
-import Services from './my components/Services';
+import Main from './my components/main'; // This will be our Home page
+import Services from './my components/Services'; // Import the new Services page
 import SideMenu from './my components/SideMenu';
 import Login from './my components/login';
 import GSTReco from './my components/GstReco';
+import './App.css';
 import Gst2B from './my components/Gst2B';
 import Gst from './my components/gst';
 
-
-
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <div className="flex h-screen bg-gray-50 ">
-      <SideMenu isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className="flex-1 flex flex-col widh-90%">
-        <Header setIsOpen={setIsOpen} />
-        <Routes>
-          <Route path="/" element={<Main />} />
+    <div className="min-h-screen bg-white">
+      <SideMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      
+      {/* Overlay for mobile */}
+      {isMenuOpen && (
+        <div 
+          onClick={toggleMenu} 
+          className="fixed inset-0 bg-blue opacity-50 z-30 lg:hidden"
+        ></div>
+      )}
+
+      {/* Main Content Wrapper */}
+      <div 
+        className={`flex flex-col transition-all duration-300 ease-in-out ${
+          isMenuOpen ? 'pl-64' : 'pl-0'
+        }`}
+      >
+        <Header />
+       <Routes>
+           <Route path="/" element={<Main />} />
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Gst-Reco" element={<GSTReco />} />

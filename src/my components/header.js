@@ -5,27 +5,20 @@ import { Link } from "react-router-dom";
 
 function Header({ setIsOpen }) {
   return (
-    <header className="flex flex-col border-b border-blue-300">
+    <header className="flex flex-col ">
       {/* Top bar with title, toggle button, and login button */}
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between px-10 py-1">
         {/* Left: Hamburger menu button - visible on mobile only */}
-        <button
-          onClick={() => setIsOpen(true)}
-          className="md:hidden p-2 rounded bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          aria-label="Open menu"
-        >
-          <Menu size={24} />
-        </button>
-
+        
         {/* Center: Title */}
-        <p className="flex-1 text-center text-2xl font-bold text-blue-600">
-          Ishika GST
+        <p className="flex-1 text-center text-2xl font-bold text-sky-300">
+          Ishika GST Services
         </p>
 
         {/* Right: Login button */}
         <Link
           to="/login"
-          className="hidden md:inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="hidden md:inline-block px-4 py-0.5 text-left px-4 py-3 bg-gray-200 hover:bg-gray-300 rounded-lg font-semibold transition-colors duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           Login
         </Link>

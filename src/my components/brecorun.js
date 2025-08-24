@@ -106,8 +106,9 @@ export const reconcileData = (gstrData, booksData) => {
     ...item,
     Invoice_Date: formatDate(item.Invoice_Date),
     Invoice_FY: getFYFromDate(formatDate(item.Invoice_Date)),
-    recoKey: `${item.GSTIN}-${normalizeInvoiceNo(item.Invoice_No)}`,
-    Taxable_Value: toNum(item.Taxable_Value),
+    // reconciliation key includes fiscal year to differentiate same invoice numbers across years
+   recoKey: `${item.GSTIN}-${normalizeInvoiceNo(item.Invoice_No)}-${getFYFromDate(formatDate(item.Invoice_Date))}`,
+    Taxable_Value: toNum(item.Taxable_Value),
     IGST: toNum(item.IGST),
     CGST: toNum(item.CGST),
     SGST: toNum(item.SGST),
@@ -118,8 +119,9 @@ export const reconcileData = (gstrData, booksData) => {
     ...item,
     Invoice_Date: formatDate(item.Invoice_Date),
     Invoice_FY: getFYFromDate(formatDate(item.Invoice_Date)),
-    recoKey: `${item.GSTIN}-${normalizeInvoiceNo(item.Invoice_No)}`,
-    Taxable_Value: toNum(item.Taxable_Value),
+     // Highlighted Change: Financial year is now part of the recoKey
+    recoKey: `${item.GSTIN}-${normalizeInvoiceNo(item.Invoice_No)}-${getFYFromDate(formatDate(item.Invoice_Date))}`,
+    Taxable_Value: toNum(item.Taxable_Value),
     IGST: toNum(item.IGST),
     CGST: toNum(item.CGST),
     SGST: toNum(item.SGST),

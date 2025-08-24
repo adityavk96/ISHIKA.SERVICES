@@ -108,6 +108,8 @@ const getPreviousMonth = () => {
 // Function to get the current month in MMM-YY format
 const getCurrentMonth = () => {
     const now = new Date();
+     now.setDate(1);
+  now.setMonth(now.getMonth() - 1);
     const months = [
         "Jan", "Feb", "Mar", "Apr", "May", "Jun",
         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
@@ -510,7 +512,7 @@ const GstRecoPage = () => {
                     <input type="file" onChange={(e) => handleFileUpload(e, 'gstr')} style={{ display: 'none' }} />
                 </label>
                 <label className="import-button books">
-                    Import AS PER BOOKES
+                    Import As per Books
                     <input type="file" onChange={(e) => handleFileUpload(e, 'books')} style={{ display: 'none' }} />
                 </label>
             </div>
@@ -662,11 +664,11 @@ const GstRecoPage = () => {
         .gst-reco-container {
             font-family: Arial, sans-serif;
            padding-top: 20px;
-            background-color: #f0f2f5;
+            background-color:white;
             border-radius: 1px;
             box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-            max-width: 1000px;
-            width: 95%; 
+            max-width: 1300px;
+            width: 100%; 
             margin: 2px auto;
         }
 
@@ -678,6 +680,7 @@ const GstRecoPage = () => {
             border-bottom: 2px solid #e0e0e0;
             padding-bottom: 10px;
             margin-bottom: 20px;
+            padding-right: 20px;
         }
 
         .header h1 {
@@ -737,13 +740,14 @@ const GstRecoPage = () => {
             gap: 10px;
             margin-bottom: 20px;
             flex-wrap: wrap;
+            padding-right: 20px;
         }
 
         .import-button, .download-button, .report-download-button {
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
-            color: white;
+            color: black;
             font-weight: bold;
             cursor: pointer;
             font-size: 14px;
@@ -753,27 +757,28 @@ const GstRecoPage = () => {
         }
 
         .download-button {
-            background-color: #6c757d;
+            background-color: #d5daebff;
+            
         }
 
         .import-button.gstr {
-            background-color: #007bff;
+            background-color: #d5daebff;
         }
 
         .import-button.books {
-            background-color: #28a745;
+            background-color: #d5daebff;
         }
 
         .report-download-button {
-            background-color: #ffc107;
+            background-color: #d5daebff;
         }
 
         .data-section {
             background-color: #fff;
-            border-radius: 8px;
+            border-radius: 0.5px;
             padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 5px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
         }
 
         .data-section h2 {
@@ -798,11 +803,16 @@ const GstRecoPage = () => {
             border-collapse: collapse;
             min-width: 600px;
             table-layout: auto;
+            
+            
         }
 
         .reco-table {
             min-width: 1800px;
+            
         }
+
+        
 
         .data-table th, .data-table td,
         .reco-table th, .reco-table td,
@@ -814,6 +824,8 @@ const GstRecoPage = () => {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+                    
+            
         }
 
         /* Highlight all table headers with light blue color */
@@ -824,6 +836,7 @@ const GstRecoPage = () => {
             position: sticky;
             top: 0;
             z-index: 10;
+            
         }
 
         .reconciliation-actions {
@@ -833,6 +846,7 @@ const GstRecoPage = () => {
             gap: 10px;
             margin-top: 20px;
             flex-wrap: wrap;
+            padding-right: 20px;
         }
 
         .reconciliation-actions span {
@@ -842,8 +856,8 @@ const GstRecoPage = () => {
 
         .run-button {
             padding: 10px 25px;
-            background-color: #17a2b8;
-            color: white;
+            background-color: #d5daebff;
+            color: black;
             border: none;
             border-radius: 4px;
             font-weight: bold;
@@ -859,6 +873,7 @@ const GstRecoPage = () => {
             display: flex;
             justify-content: flex-end;
             margin-bottom: 20px;
+            
         }
 
         /* Mobile Responsiveness */
