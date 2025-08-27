@@ -8,7 +8,7 @@ import Login from './my components/login';
 import GSTReco from './my components/GstReco';
 import './App.css';
 import Gst2B from './my components/Gst2B';
-import Gst from './my components/gst';
+import Notes from './my components/Notes';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +42,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/Gst-Reco" element={<GSTReco />} />
           <Route path="/gst-2B" element={<Gst2B />} />
-          <Route path="/gst" element={<Gst />} />
+          <Route path="/Notes" element={<Notes />} />
         </Routes>
       </div>
     </div>

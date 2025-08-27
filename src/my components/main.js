@@ -75,10 +75,10 @@ const Main = () => {
       {/* Main content */}
       <div className="flex-1 flex flex-col items-center justify-center text-center">
         <h1 className="text-4xl font-bold text-gray-800">
-          Welcome {userName || 'Guest'}!
+          Welcome {userName || ''}!
         </h1>
         <p className="mt-4 text-lg text-gray-600">
-          This is a minimalist application with a side menu.
+          This application was created by Aditya Kumar Vishwakarma in his daughter name.
         </p>
       </div>
     </main>
